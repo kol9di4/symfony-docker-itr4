@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+
+    <h1 class="h3 mb-3 font-weight-normal">Register</h1>
+
+    {{ form_errors(registrationForm) }}
+
+    {{ form_start(registrationForm) }}
+    <div class="my-4">
+        <div class="my-2">{{ form_row(registrationForm.username) }}</div>
+        <div class="my-2">{{ form_row(registrationForm.email) }}</div>
+        <div class="my-2">{{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}</div>
+    </div>
+
+    <button type="submit" class="btn btn-lg btn-primary">Register</button>
+    {{ form_end(registrationForm) }}
+</div>
+{% endblock %}
